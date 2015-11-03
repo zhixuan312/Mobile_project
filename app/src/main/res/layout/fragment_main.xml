@@ -1,15 +1,17 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity$PlaceholderFragment"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto">
 
   <ScrollView
+      android:paddingBottom="@dimen/activity_vertical_margin"
+      android:paddingLeft="@dimen/activity_horizontal_margin"
+      android:paddingRight="@dimen/activity_horizontal_margin"
+      android:paddingTop="@dimen/activity_vertical_margin"
+      tools:context=".MainActivity$PlaceholderFragment"
       android:layout_width="fill_parent"
       android:layout_height="fill_parent">
     <RelativeLayout
@@ -59,7 +61,7 @@
           android:layout_height="wrap_content"
           android:maxLines="1"
           android:id="@+id/main_eT_from"
-          app:met_primaryColor= "#1E88E5"
+          app:met_primaryColor= "#f4c20d"
           app:met_floatingLabel="highlight"
           app:met_floatingLabelText = "From"
           android:hint="From"
@@ -75,7 +77,7 @@
           android:layout_height="wrap_content"
           android:maxLines="1"
           android:id="@+id/main_eT_to"
-          app:met_primaryColor= "#1E88E5"
+          app:met_primaryColor= "#f4c20d"
           app:met_floatingLabel="highlight"
           app:met_floatingLabelText = "To"
           android:hint="To"
@@ -99,7 +101,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Depart"
-            android:textColor="#1E88E5"/>
+            android:textColor="#f4c20d"/>
 
         <TextView
             android:id="@+id/main_destination"
@@ -107,40 +109,44 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Return"
-            android:textColor="#1E88E5"/>
+            android:textColor="#f4c20d"/>
       </LinearLayout>
 
       <LinearLayout
           android:id="@+id/main_lL2"
           android:layout_width="fill_parent"
-          android:layout_height="50dp"
+          android:layout_height="wrap_content"
           android:layout_below="@+id/main_lL1"
           android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/main_btn_departDate"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="main_btn_pickDate"
-            android:text="Pick a date" />
+          <com.gc.materialdesign.views.ButtonFlat
+              android:id="@+id/main_btn_departDate"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_weight="1"
+              android:onClick="main_btn_pickDate"
+              android:text="Pick a date"
+              android:gravity="left"
+              />
 
-        <Button
-            android:id="@+id/main_btn_returnDate"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="main_btn_pickDate"
-            android:text="Pick a date" />
+          <com.gc.materialdesign.views.ButtonFlat
+              android:id="@+id/main_btn_returnDate"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_weight="1"
+              android:onClick="main_btn_pickDate"
+              android:text="Pick a date"
+              android:gravity="left"
+              />
       </LinearLayout>
 
-      <Button
-          android:id="@+id/main_btn_search"
-          android:layout_width="fill_parent"
-          android:layout_height="50dp"
-          android:layout_below="@+id/main_lL2"
-          android:onClick="main_btn_search"
-          android:text="Search" />
+        <com.gc.materialdesign.views.ButtonRectangle
+            android:id="@+id/main_btn_search"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/main_lL2"
+            android:onClick="main_btn_search"
+            android:text="Search"/>
 
       <!--<Button-->
       <!--android:id="@+id/main_btn_testDetail"-->
@@ -216,4 +222,56 @@
       </RelativeLayout>
     </RelativeLayout>
   </ScrollView>
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/main_float_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:paddingBottom="5dp"
+        android:paddingRight="10dp"
+        fab:menu_icon="@drawable/airplane"
+        fab:menu_fab_size="normal"
+        fab:menu_showShadow="true"
+        fab:menu_shadowColor="#66000000"
+        fab:menu_shadowRadius="4dp"
+        fab:menu_shadowXOffset="1dp"
+        fab:menu_shadowYOffset="3dp"
+        fab:menu_colorNormal="#db3236"
+        fab:menu_colorPressed="#db3236"
+        fab:menu_colorRipple="#db3236"
+        >
+
+        <com.github.clans.fab.FloatingActionButton
+        android:id="@+id/main_float_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:fab_colorNormal="#3cba54"
+        app:fab_colorPressed="#3cba54"
+        app:fab_colorRipple="#3cba54"
+        app:fab_showShadow="true"
+        app:fab_shadowColor="#66000000"
+        app:fab_shadowRadius="4dp"
+        app:fab_shadowXOffset="1dp"
+        app:fab_shadowYOffset="3dp"
+        app:fab_size="normal"
+        fab:fab_label="Account" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/menu_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="#f4c20d"
+            app:fab_colorPressed="#f4c20d"
+            app:fab_colorRipple="#f4c20d"
+            app:fab_showShadow="true"
+            app:fab_shadowColor="#66000000"
+            app:fab_shadowRadius="4dp"
+            app:fab_shadowXOffset="1dp"
+            app:fab_shadowYOffset="3dp"
+            app:fab_size="normal"
+            fab:fab_label="Check In" />
+
+    </com.github.clans.fab.FloatingActionMenu>
 </RelativeLayout>
