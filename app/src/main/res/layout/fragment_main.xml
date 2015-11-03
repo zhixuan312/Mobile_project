@@ -1,227 +1,226 @@
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:fab="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
-  <ScrollView
-      android:paddingBottom="@dimen/activity_vertical_margin"
-      android:paddingLeft="@dimen/activity_horizontal_margin"
-      android:paddingRight="@dimen/activity_horizontal_margin"
-      android:paddingTop="@dimen/activity_vertical_margin"
-      tools:context=".MainActivity$PlaceholderFragment"
-      android:layout_width="fill_parent"
-      android:layout_height="fill_parent">
-    <RelativeLayout
+    <ScrollView
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+        android:layout_height="fill_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context=".MainActivity$PlaceholderFragment">
 
-      <ImageView
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:id="@+id/main_logo"
-          android:background="@drawable/logonew"
-          />
-
-      <RadioGroup
-          android:layout_below="@+id/main_logo"
-          android:id="@+id/main_radioGrp1"
-          android:layout_width="fill_parent"
-          android:layout_height="wrap_content"
-          android:orientation="horizontal"
-          >
-
-        <RadioButton
-            android:id="@+id/main_radioBtn_roundTrip"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:checked="true"
-            android:onClick="main_radioBtn_roundTrip"
-            android:text="Round Trip"
-            android:buttonTint="#1E88E5"/>
-
-        <RadioButton
-            android:id="@+id/main_radioBtn_oneWay"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:checked="false"
-            android:onClick="main_radioBtn_oneWay"
-            android:text="One Way"
-            android:buttonTint="#1E88E5"
-            />
-
-      </RadioGroup>
-
-      <com.rengwuxian.materialedittext.MaterialEditText
-          android:layout_width="fill_parent"
-          android:layout_height="wrap_content"
-          android:maxLines="1"
-          android:id="@+id/main_eT_from"
-          app:met_primaryColor= "#f4c20d"
-          app:met_floatingLabel="highlight"
-          app:met_floatingLabelText = "From"
-          android:hint="From"
-          app:met_underlineColor= "#1E88E5"
-          android:backgroundTint="#1E88E5"
-          app:met_textColorHint = "#1E88E5"
-          app:met_maxCharacters = "20"
-          android:layout_below="@+id/main_radioGrp1"
-          />
-
-      <com.rengwuxian.materialedittext.MaterialEditText
-          android:layout_width="fill_parent"
-          android:layout_height="wrap_content"
-          android:maxLines="1"
-          android:id="@+id/main_eT_to"
-          app:met_primaryColor= "#f4c20d"
-          app:met_floatingLabel="highlight"
-          app:met_floatingLabelText = "To"
-          android:hint="To"
-          app:met_underlineColor= "#1E88E5"
-          android:backgroundTint="#1E88E5"
-          app:met_textColorHint = "#1E88E5"
-          app:met_maxCharacters = "20"
-          android:layout_below="@+id/main_eT_from"
-          />
-
-      <LinearLayout
-          android:id="@+id/main_lL1"
-          android:layout_width="fill_parent"
-          android:layout_height="wrap_content"
-          android:layout_below="@+id/main_eT_to"
-          android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/main_origin"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Depart"
-            android:textColor="#f4c20d"/>
-
-        <TextView
-            android:id="@+id/main_destination"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Return"
-            android:textColor="#f4c20d"/>
-      </LinearLayout>
-
-      <LinearLayout
-          android:id="@+id/main_lL2"
-          android:layout_width="fill_parent"
-          android:layout_height="wrap_content"
-          android:layout_below="@+id/main_lL1"
-          android:orientation="horizontal">
-
-          <com.gc.materialdesign.views.ButtonFlat
-              android:id="@+id/main_btn_departDate"
-              android:layout_width="0dp"
-              android:layout_height="wrap_content"
-              android:layout_weight="1"
-              android:onClick="main_btn_pickDate"
-              android:text="Pick a date"
-              android:gravity="left"
-              />
-
-          <com.gc.materialdesign.views.ButtonFlat
-              android:id="@+id/main_btn_returnDate"
-              android:layout_width="0dp"
-              android:layout_height="wrap_content"
-              android:layout_weight="1"
-              android:onClick="main_btn_pickDate"
-              android:text="Pick a date"
-              android:gravity="left"
-              />
-      </LinearLayout>
-
-        <com.gc.materialdesign.views.ButtonRectangle
-            android:id="@+id/main_btn_search"
+        <RelativeLayout
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
-            android:layout_below="@+id/main_lL2"
-            android:onClick="main_btn_search"
-            android:text="Search"/>
+            android:layout_height="fill_parent">
 
-      <!--<Button-->
-      <!--android:id="@+id/main_btn_testDetail"-->
-      <!--android:layout_width="fill_parent"-->
-      <!--android:layout_height="wrap_content"-->
-      <!--android:layout_below="@+id/main_btn_search"-->
-      <!--android:onClick="testDetailPage"-->
-      <!--android:text="DetailPage" />-->
+            <ImageView
+                android:id="@+id/main_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/logonew" />
 
-      <!--<Button-->
-      <!--android:id="@+id/main_btn_login"-->
-      <!--android:layout_width="fill_parent"-->
-      <!--android:layout_height="wrap_content"-->
-      <!--android:layout_below="@+id/main_btn_testDetail"-->
-      <!--android:onClick="testLoginPage"-->
-      <!--android:text="LoginPage" />-->
+            <RadioGroup
+                android:id="@+id/main_radioGrp1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/main_logo"
+                android:orientation="horizontal">
 
-      <!--<Button-->
-      <!--android:id="@+id/main_btn_testMap"-->
-      <!--android:layout_width="fill_parent"-->
-      <!--android:layout_height="wrap_content"-->
-      <!--android:layout_below="@+id/main_btn_login"-->
-      <!--android:onClick="testMapPage"-->
-      <!--android:text="MapPage" />-->
+                <RadioButton
+                    android:id="@+id/main_radioBtn_roundTrip"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:buttonTint="#1E88E5"
+                    android:checked="true"
+                    android:onClick="main_radioBtn_roundTrip"
+                    android:text="Round Trip" />
 
-      <CheckBox
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:id="@+id/main_cb_moreOption"
-          android:text="More options"
-          android:textAllCaps="false"
-          android:checked="false"
-          android:layout_below="@+id/main_btn_search"
-          android:onClick="main_checkBox"
-          />
-      <RelativeLayout
-          android:layout_width="fill_parent"
-          android:layout_height="wrap_content"
-          android:layout_below="@+id/main_cb_moreOption"
-          android:visibility="gone"
-          android:id="@+id/main_rl_moreOption">
-        <RadioGroup
-            android:layout_width="fill_parent"
-            android:id="@+id/main_rg_bcs"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-          <RadioButton
-              android:layout_width="fill_parent"
-              android:layout_height="wrap_content"
-              android:id="@+id/firstClass"
-              android:text="First Class"/>
-          <RadioButton
-              android:layout_width="fill_parent"
-              android:layout_height="wrap_content"
-              android:id="@+id/businessClass"
-              android:text="Business Class"/>
-          <RadioButton
-              android:layout_width="fill_parent"
-              android:layout_height="wrap_content"
-              android:id="@+id/premiumEconomyClass"
-              android:text="Premium Economy Class"/>
-          <RadioButton
-              android:layout_width="fill_parent"
-              android:layout_height="wrap_content"
-              android:id="@+id/economyClass"
-              android:text="Economy Class"/>
-          <RadioButton
-              android:layout_width="fill_parent"
-              android:layout_height="wrap_content"
-              android:id="@+id/allClasses"
-              android:text="All Cabin Class"/>
-        </RadioGroup>
-      </RelativeLayout>
-    </RelativeLayout>
-  </ScrollView>
+                <RadioButton
+                    android:id="@+id/main_radioBtn_oneWay"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:buttonTint="#1E88E5"
+                    android:checked="false"
+                    android:onClick="main_radioBtn_oneWay"
+                    android:text="One Way" />
+
+            </RadioGroup>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/main_eT_from"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/main_radioGrp1"
+                android:backgroundTint="#1E88E5"
+                android:hint="From"
+                android:maxLines="1"
+                app:met_floatingLabel="highlight"
+                app:met_floatingLabelText="From"
+                app:met_maxCharacters="20"
+                app:met_primaryColor="#f4c20d"
+                app:met_textColorHint="#1E88E5"
+                app:met_underlineColor="#1E88E5" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/main_eT_to"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/main_eT_from"
+                android:backgroundTint="#1E88E5"
+                android:hint="To"
+                android:maxLines="1"
+                app:met_floatingLabel="highlight"
+                app:met_floatingLabelText="To"
+                app:met_maxCharacters="20"
+                app:met_primaryColor="#f4c20d"
+                app:met_textColorHint="#1E88E5"
+                app:met_underlineColor="#1E88E5" />
+
+            <LinearLayout
+                android:id="@+id/main_lL1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/main_eT_to"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/main_origin"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Depart"
+                    android:textColor="#f4c20d" />
+
+                <TextView
+                    android:id="@+id/main_destination"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Return"
+                    android:textColor="#f4c20d" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/main_lL2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/main_lL1"
+                android:orientation="horizontal">
+
+                <com.gc.materialdesign.views.ButtonFlat
+                    android:id="@+id/main_btn_departDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:onClick="main_btn_pickDate"
+                    android:text="Pick a date" />
+
+                <com.gc.materialdesign.views.ButtonFlat
+                    android:id="@+id/main_btn_returnDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:onClick="main_btn_pickDate"
+                    android:text="Pick a date" />
+            </LinearLayout>
+
+            <com.gc.materialdesign.views.ButtonRectangle
+                android:id="@+id/main_btn_search"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/main_lL2"
+                android:onClick="main_btn_search"
+                android:text="Search" />
+
+            <!--<Button-->
+            <!--android:id="@+id/main_btn_testDetail"-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/main_btn_search"-->
+            <!--android:onClick="testDetailPage"-->
+            <!--android:text="DetailPage" />-->
+
+            <!--<Button-->
+            <!--android:id="@+id/main_btn_login"-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/main_btn_testDetail"-->
+            <!--android:onClick="testLoginPage"-->
+            <!--android:text="LoginPage" />-->
+
+            <!--<Button-->
+            <!--android:id="@+id/main_btn_testMap"-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/main_btn_login"-->
+            <!--android:onClick="testMapPage"-->
+            <!--android:text="MapPage" />-->
+
+            <CheckBox
+                android:id="@+id/main_cb_moreOption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/main_btn_search"
+                android:checked="false"
+                android:onClick="main_checkBox"
+                android:text="More options"
+                android:textAllCaps="false" />
+
+            <RelativeLayout
+                android:id="@+id/main_rl_moreOption"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/main_cb_moreOption"
+                android:visibility="gone">
+
+                <RadioGroup
+                    android:id="@+id/main_rg_bcs"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/firstClass"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="First Class" />
+
+                    <RadioButton
+                        android:id="@+id/businessClass"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Business Class" />
+
+                    <RadioButton
+                        android:id="@+id/premiumEconomyClass"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Premium Economy Class" />
+
+                    <RadioButton
+                        android:id="@+id/economyClass"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Economy Class" />
+
+                    <RadioButton
+                        android:id="@+id/allClasses"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="All Cabin Class" />
+                </RadioGroup>
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
 
     <com.github.clans.fab.FloatingActionMenu
         android:id="@+id/main_float_menu"
@@ -231,47 +230,47 @@
         android:layout_alignParentRight="true"
         android:paddingBottom="5dp"
         android:paddingRight="10dp"
-        fab:menu_icon="@drawable/airplane"
+        fab:menu_colorNormal="#db3236"
+        fab:menu_colorPressed="#db3236"
+        fab:menu_colorRipple="#db3236"
         fab:menu_fab_size="normal"
-        fab:menu_showShadow="true"
+        fab:menu_icon="@drawable/airplane"
         fab:menu_shadowColor="#66000000"
         fab:menu_shadowRadius="4dp"
         fab:menu_shadowXOffset="1dp"
         fab:menu_shadowYOffset="3dp"
-        fab:menu_colorNormal="#db3236"
-        fab:menu_colorPressed="#db3236"
-        fab:menu_colorRipple="#db3236"
-        >
+        fab:menu_showShadow="true">
 
         <com.github.clans.fab.FloatingActionButton
-        android:id="@+id/main_float_account"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:fab_colorNormal="#3cba54"
-        app:fab_colorPressed="#3cba54"
-        app:fab_colorRipple="#3cba54"
-        app:fab_showShadow="true"
-        app:fab_shadowColor="#66000000"
-        app:fab_shadowRadius="4dp"
-        app:fab_shadowXOffset="1dp"
-        app:fab_shadowYOffset="3dp"
-        app:fab_size="normal"
-        fab:fab_label="Account" />
+            android:id="@+id/main_float_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/account"
+            app:fab_colorNormal="#3cba54"
+            app:fab_colorPressed="#3cba54"
+            app:fab_colorRipple="#3cba54"
+            app:fab_shadowColor="#66000000"
+            app:fab_shadowRadius="4dp"
+            app:fab_shadowXOffset="1dp"
+            app:fab_shadowYOffset="3dp"
+            app:fab_showShadow="true"
+            app:fab_size="normal"
+            fab:fab_label="Account" />
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/menu_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:src="@drawable/checkin"
             app:fab_colorNormal="#f4c20d"
             app:fab_colorPressed="#f4c20d"
             app:fab_colorRipple="#f4c20d"
-            app:fab_showShadow="true"
             app:fab_shadowColor="#66000000"
             app:fab_shadowRadius="4dp"
             app:fab_shadowXOffset="1dp"
             app:fab_shadowYOffset="3dp"
+            app:fab_showShadow="true"
             app:fab_size="normal"
             fab:fab_label="Check In" />
-
     </com.github.clans.fab.FloatingActionMenu>
 </RelativeLayout>
