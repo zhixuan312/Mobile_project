@@ -46,8 +46,8 @@ public class MainActivity extends AppCompatActivity
     private int year_D,month_D,day_D;
     private int departDialogId = 1;
     private int returnDialogId = 2;
-    com.gc.materialdesign.views.ButtonRectangle main_btn_departDate;
-    com.gc.materialdesign.views.ButtonRectangle main_btn_returnDate;
+    com.gc.materialdesign.views.ButtonFlat main_btn_departDate;
+    com.gc.materialdesign.views.ButtonFlat main_btn_returnDate;
     RadioButton main_radioBtn_roundTrip;
 
     RelativeLayout main_rl_moreOption;
@@ -220,7 +220,7 @@ public class MainActivity extends AppCompatActivity
             year_D = year;
             month_D = monthOfYear;
             day_D = dayOfMonth;
-            main_btn_departDate = (com.gc.materialdesign.views.ButtonRectangle)findViewById(R.id.main_btn_departDate);
+            main_btn_departDate = (com.gc.materialdesign.views.ButtonFlat)findViewById(R.id.main_btn_departDate);
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yy");
             Calendar calendar = Calendar.getInstance();
             calendar.set(Calendar.YEAR, year_D);
@@ -243,19 +243,19 @@ public class MainActivity extends AppCompatActivity
             calendar.set(Calendar.MONTH, month_R);
             calendar.set(Calendar.DAY_OF_MONTH, day_R);
             Date returnD = calendar.getTime();
-            main_btn_returnDate = (com.gc.materialdesign.views.ButtonRectangle)findViewById(R.id.main_btn_returnDate);
+            main_btn_returnDate = (com.gc.materialdesign.views.ButtonFlat)findViewById(R.id.main_btn_returnDate);
             main_btn_returnDate.setText(simpleDateFormat.format(returnD).toString());
             Toast.makeText(MainActivity.this, simpleDateFormat.format(returnD).toString(), Toast.LENGTH_SHORT).show();
         }
     };
 
     public void main_radioBtn_roundTrip(View view) {
-        main_btn_returnDate = (com.gc.materialdesign.views.ButtonRectangle)findViewById(R.id.main_btn_returnDate);
+        main_btn_returnDate = (com.gc.materialdesign.views.ButtonFlat)findViewById(R.id.main_btn_returnDate);
         main_btn_returnDate.setEnabled(true);
     }
 
     public void main_radioBtn_oneWay(View view) {
-        main_btn_returnDate = (com.gc.materialdesign.views.ButtonRectangle)findViewById(R.id.main_btn_returnDate);
+        main_btn_returnDate = (com.gc.materialdesign.views.ButtonFlat)findViewById(R.id.main_btn_returnDate);
         main_btn_returnDate.setEnabled(false);
     }
 
@@ -265,8 +265,8 @@ public class MainActivity extends AppCompatActivity
 
         if (main_radioBtn_roundTrip.isChecked()){
             Intent intent = new Intent (this, SearchResultsTwoWay.class);
-            EditText destinationET = (EditText)findViewById(R.id.main_eT_to);
-            EditText orginET = (EditText)findViewById(R.id.main_eT_from);
+            com.rengwuxian.materialedittext.MaterialEditText destinationET = (com.rengwuxian.materialedittext.MaterialEditText)findViewById(R.id.main_eT_to);
+            com.rengwuxian.materialedittext.MaterialEditText orginET = (com.rengwuxian.materialedittext.MaterialEditText)findViewById(R.id.main_eT_from);
             System.out.println("Round trip is checked");
             intent.putExtra("year_R",year_R);
             intent.putExtra("month_R",month_R);
