@@ -76,8 +76,6 @@ public class MainActivity extends AppCompatActivity
         year_R = calendar.get(Calendar.YEAR);
         month_R = calendar.get(Calendar.MONTH);
         day_R = calendar.get(Calendar.DAY_OF_MONTH);
-
-
     }
 
     @Override
